@@ -15,7 +15,11 @@ class CreateTipoIdentificacionsTable extends Migration
     {
         Schema::create('tipo_identificacions', function (Blueprint $table) {
             $table->increments('idtipoId');
+<<<<<<< HEAD
             $table->string('nombreTipoId')->unique();
+=======
+            $table->string('nombreTipoId');
+>>>>>>> 2fe9faf4bab1815451fa0e38f8313a7ac75dda8c
         });
     }
 

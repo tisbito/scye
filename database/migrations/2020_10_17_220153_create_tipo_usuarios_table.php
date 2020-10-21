@@ -15,7 +15,11 @@ class CreateTipoUsuariosTable extends Migration
     {
         Schema::create('tipo_usuarios', function (Blueprint $table) {
             $table->increments('idTipoUser');
+<<<<<<< HEAD
             $table->string('nombreTipoUser',50)->unique();
+=======
+            $table->string('nombreTipoUser',50);
+>>>>>>> 2fe9faf4bab1815451fa0e38f8313a7ac75dda8c
         });
 
         Schema::create('registro_usuarios', function (Blueprint $table) {

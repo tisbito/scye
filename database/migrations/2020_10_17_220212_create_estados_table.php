@@ -15,7 +15,11 @@ class CreateEstadosTable extends Migration
     {
         Schema::create('estados', function (Blueprint $table) {
             $table->increments('idEstado');
+<<<<<<< HEAD
             $table->string('nombreEstado',20)->unique();
+=======
+            $table->string('nombreEstado',20);
+>>>>>>> 2fe9faf4bab1815451fa0e38f8313a7ac75dda8c
         });
     }
 
