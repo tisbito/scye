@@ -35,5 +35,6 @@ class IdSeeder extends Seeder
 		DB::table('tipo_identificacions')->insert([
     		'nombreTipoId'=>'Nit',
     	]);
+
     }
 }

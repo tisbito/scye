@@ -7,12 +7,12 @@ use Illuminate\Support\Facades\Schema;
 class CreateUsuariosTable extends Migration
 {
 
-<<<<<<< HEAD
 
-=======
+    /**
+     * Run the migrations.
+     *
      * @return void
      */
->>>>>>> 2fe9faf4bab1815451fa0e38f8313a7ac75dda8c
     public function up()
     {
         Schema::create('usuarios', function (Blueprint $table) {
@@ -33,13 +33,12 @@ class CreateUsuariosTable extends Migration
         });
     }
 
-<<<<<<< HEAD
-
-
-=======
+    /**
+     * Run the migrations.
+     *
      * @return void
      */
->>>>>>> 2fe9faf4bab1815451fa0e38f8313a7ac75dda8c
+
     public function down()
     {
         Schema::dropIfExists('usuarios');

@@ -15,19 +15,16 @@ class CreateTipoUsuariosTable extends Migration
     {
         Schema::create('tipo_usuarios', function (Blueprint $table) {
             $table->increments('idTipoUser');
-<<<<<<< HEAD
             $table->string('nombreTipoUser',50)->unique();
-=======
-            $table->string('nombreTipoUser',50);
->>>>>>> 2fe9faf4bab1815451fa0e38f8313a7ac75dda8c
+
+
         });
 
         Schema::create('registro_usuarios', function (Blueprint $table) {
-            $table->increments('idregistro');
-            $table->unsignedInteger('idTipoFk');
-            $table->foreign('idTipoFk')->references('idTipoUser')->on('tipo_usuarios');
+            $table->increments('idregistro');        
             $table->string('user',50);
             $table->string('pass',50);
+            $table->timestamp('fecha_registro');
         });
     }
 
