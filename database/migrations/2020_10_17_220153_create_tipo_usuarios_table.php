@@ -22,9 +22,11 @@ class CreateTipoUsuariosTable extends Migration
 
         Schema::create('registro_usuarios', function (Blueprint $table) {
             $table->increments('idregistro');        
-            $table->string('user',50);
+            $table->string('usuario',50);
+            $table->string('mail',50)->unique();
             $table->string('pass',50);
-            $table->timestamp('fecha_registro');
+            $table->timestamp('updated_at');
+            $table->timestamp('created_at');
         });
     }
 

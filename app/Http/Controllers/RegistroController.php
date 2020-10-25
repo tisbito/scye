@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Usuarios;
+use App\Registro;
 use Illuminate\Http\Request;
 
-class UsuariosController extends Controller
+class RegistroController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        return view('RegistroUsuarios.RegistroUsuarios');
+        return response()->view('RegistroUsuarios.RegistroUsuarios');
     }
 
     /**
@@ -35,16 +35,29 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
- 
+
+
+        $usuario = $request->input('usuario');
+        $mail = $request->input('mail');
+        $pass = $request->input('pass');
+        $pass = password_hash($pass , PASSWORD_DEFAULT);
+        $registro = new Registro;
+        $registro-> usuario = $usuario;
+        $registro-> mail = $mail;
+        $registro-> pass = $pass;
+        $registro-> save();
+
+        return redirect()->route('Registro.index');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Usuarios  $usuarios
+     * @param  \App\Registro  $registro
      * @return \Illuminate\Http\Response
      */
-    public function show(Usuarios $usuarios)
+    public function show(Registro $registro)
     {
         //
     }
@@ -52,10 +65,10 @@ class UsuariosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Usuarios  $usuarios
+     * @param  \App\Registro  $registro
      * @return \Illuminate\Http\Response
      */
-    public function edit(Usuarios $usuarios)
+    public function edit(Registro $registro)
     {
         //
     }
@@ -64,10 +77,10 @@ class UsuariosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Usuarios  $usuarios
+     * @param  \App\Registro  $registro
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Usuarios $usuarios)
+    public function update(Request $request, Registro $registro)
     {
         //
     }
@@ -75,10 +88,10 @@ class UsuariosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Usuarios  $usuarios
+     * @param  \App\Registro  $registro
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Usuarios $usuarios)
+    public function destroy(Registro $registro)
     {
         //
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\RegistroUsuarios;
+use App\Registro;
 use Illuminate\Http\Request;
 
 class RegistroUsuariosController extends Controller
@@ -14,7 +15,10 @@ class RegistroUsuariosController extends Controller
      */
     public function index()
     {
-        return view('RegistroUsuarios.RegistroUsuarios');
+        //return view('RegistroUsuarios.RegistroUsuarios');
+
+         return response()->view('RegistroUsuarios.RegistroUsuarios');
+
     }
 
     /**
@@ -24,7 +28,7 @@ class RegistroUsuariosController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -35,7 +39,24 @@ class RegistroUsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        /*  $info = request()->except('_token');
+            return response()->json($info);
+            RegistroUsuarios::insert($info);
+        */
+
+        $usuario = $request->input('usuario');
+        $mail = $request->input('mail');
+        $pass = $request->input('pass');
+        $registro = new Registro;
+        $registro-> usuario = $usuario;
+        $registro-> mail = $mail;
+        $registro-> pass = $pass;
+        $registro-> save();
+
+
+
+
     }
 
     /**
@@ -46,7 +67,7 @@ class RegistroUsuariosController extends Controller
      */
     public function show(RegistroUsuarios $registroUsuarios)
     {
-        //
+        
     }
 
     /**

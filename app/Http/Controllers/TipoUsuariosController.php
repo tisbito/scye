@@ -14,7 +14,7 @@ class TipoUsuariosController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**

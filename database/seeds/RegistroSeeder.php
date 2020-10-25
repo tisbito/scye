@@ -13,24 +13,6 @@ class RegistroSeeder extends Seeder
     public function run()
     {
     	
-        //$tipoid = DB::select('SELECT idTipoUser from tipo_usuarios WHERE nombreTipoUser = ?', ['Super Usuario']);
-/*
-        $tipoid = DB::table('tipo_usuarios')->select('idTipoUser')->first();
 
-   
-        DB::table('registro_usuarios')->insert([
-            'user'=>'ccastri',
-        ]);
-
-        DB::table('registro_usuarios')->insert([
-           'pass'=>'12345',
-        ]);
-
-        DB::table('registro_usuarios')->insert([
-
-        	'idTipoFk'=>$tipoid->idTipoUser,
-        ]);
-
-*/
     }
 }
