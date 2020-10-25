@@ -16,9 +16,9 @@ class CreateCursosTable extends Migration
         Schema::create('cursos', function (Blueprint $table) {
                 $table->increments('idcursos');
                 $table->unsignedInteger('idUsuarioFK');
-                $table->foreign('idUsuarioFK')->references('idUsuario')->on('usuarios');
+                $table->foreign('idUsuarioFK')->references('idUser')->on('usuarios');
                 $table->string('nombreCurso');
-                $table->date('fechaSubida');
+                $table->timestamps();
         });
     }
 
