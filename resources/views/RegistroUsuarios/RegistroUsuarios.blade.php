@@ -16,7 +16,6 @@
         <input type="text" name="mail" id="userMail" placeholder="ingresa tu Correo"></br>
         <input type="password" name="pass" id="userPass" placeholder="ingresa tu Contraseña"></br></br>
         <input type="submit" value="Registrarse">
-
     </form>
     </center>
 </body>

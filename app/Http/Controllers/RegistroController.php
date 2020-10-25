@@ -35,8 +35,7 @@ class RegistroController extends Controller
      */
     public function store(Request $request)
     {
-
-
+        
         $usuario = $request->input('usuario');
         $mail = $request->input('mail');
         $pass = $request->input('pass');
