@@ -9,7 +9,7 @@
     <center>
     <h1>Registro de Usuarios</h1>
     <p><h3>Por favor ingresa los siguientes datos: </h3></p>
-    <form action="{{ url('/Registro') }}" method="POST">
+    <form action="{{ url('/Usuarios') }}" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}"/></br>
         <input type="hidden" name="created_at" value="{{ now() }}"/></br>
         <input type="text" name="usuario" id="userName" placeholder="ingresa tu Nombre"></br>

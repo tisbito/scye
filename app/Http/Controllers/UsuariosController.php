@@ -14,7 +14,7 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        return view('RegistroUsuarios.RegistroUsuarios');
+        return view('RegistroUsuarios.UsuariosHome');
     }
 
     /**
@@ -24,7 +24,7 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-        //
+        return view('RegistroUsuarios.RegistroUsuarios');
     }
 
     /**
@@ -35,7 +35,17 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
- 
+        $usuario = $request->input('usuario');
+        $mail = $request->input('mail');
+        $pass = $request->input('pass');
+        $pass = password_hash($pass , PASSWORD_DEFAULT);
+        $registro = new Usuarios;
+        $registro-> usuario = $usuario;
+        $registro-> mail = $mail;
+        $registro-> pass = $pass;
+        $registro-> save();
+
+        return redirect()->route('Usuarios.index');
     }
 
     /**

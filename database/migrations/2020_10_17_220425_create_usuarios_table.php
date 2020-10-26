@@ -19,10 +19,12 @@ class CreateUsuariosTable extends Migration
             $table->increments('idUser');
             $table->unsignedInteger('idRegClienteFk');
             $table->unsignedInteger('idTipoIdFk');
+            $table->unsignedInteger('idTipoUserFk');
             $table->unsignedInteger('idEstadoFk');
             $table->foreign('idRegClienteFk')->references('idClientes')->on('clientes');
             $table->foreign('idTipoIdFk')->references('idtipoId')->on('tipo_identificacions');
-            $table->foreign('idEstadoFk')->references('idEstado')->on('estados')->default('Activo');
+            $table->foreign('idEstadoFk')->references('idEstado')->on('estados');
+            $table->foreign('idTipoUserFk')->references('idTipoUser')->on('tipo_usuarios');
             $table->string('nombreUsuario',150);
             $table->string('apellidoUsuario',150);
             $table->string('documentoUsuario',150);

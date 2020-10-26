@@ -27,7 +27,6 @@ class CreateTipoIdentificacionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_identificacions');
-        
+        Schema::dropIfExists('tipo_identificacions');        
     }
 }
