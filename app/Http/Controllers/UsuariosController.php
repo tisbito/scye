@@ -14,7 +14,9 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        return view('RegistroUsuarios.UsuariosHome');
+        $usuarios = Usuarios::get();
+
+        return view('RegistroUsuarios.UsuariosHome',['usuarios'=> $usuarios]);
     }
 
     /**

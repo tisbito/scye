@@ -14,9 +14,9 @@ class CreateMultimediaTable extends Migration
     public function up()
     {
         Schema::create('multimedia', function (Blueprint $table) {
-                $table->increments('idMultimedia');
+                $table->increments('id');
                 $table->unsignedInteger('idcursosFK');
-                $table->foreign('idcursosFK')->references('idcursos')->on('cursos');
+                $table->foreign('idcursosFK')->references('id')->on('cursos');
                 $table->string('tittle');
                 $table->date('fechaCreacion');
                 $table->LongText('contenido');
