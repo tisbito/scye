@@ -14,7 +14,7 @@ class CursosController extends Controller
      */
     public function index()
     {
-        return view('CrearCursos.CrearCurso');
+        return view('Cursos.Crear');
     }
 
     /**

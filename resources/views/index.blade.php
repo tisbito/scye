@@ -1,1 +1,3 @@
-inicio
+@extends('plantilla')
+
+

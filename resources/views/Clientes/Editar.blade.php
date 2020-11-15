@@ -8,8 +8,7 @@
 </head>
 <body>
 
-    <h3>{{$Clientes->estado->nombreEstado}}</br></h3>
-    {{$Clientes->tipoIdentificacion->nombreTipoId}}
+    
 
 </body>
 </html>

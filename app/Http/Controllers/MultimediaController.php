@@ -14,7 +14,7 @@ class MultimediaController extends Controller
      */
     public function index()
     {
-        return view('CrearCursos.EditarCurso');
+        return view('Cursos.Editar');
     }
 
     /**

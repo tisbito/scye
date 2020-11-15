@@ -41,10 +41,6 @@
         <select name="tipodocumento" id="documentType">
             <option value="0">Empresa 1</option>
             <option value="1">Empresa 2</option>
-            <option value="2">Empresa 3</option>
-            <option value="3">Empresa 4</option>
-            <option value="4">Empresa 5</option>
-            <option value="5">Empresa 6</option>
         </select></br></br>
 
         <input type="submit" value="Registrarse">

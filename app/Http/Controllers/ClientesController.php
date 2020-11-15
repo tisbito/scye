@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Cliente;
 use App\Estados;
+use App\TipoIdentificacion;
 use Illuminate\Http\Request;
 use DB;
+use Http;
 
 class ClientesController extends Controller
 {
@@ -16,12 +18,9 @@ class ClientesController extends Controller
      */
     public function index()
     {
-        
         $array_clientes = Cliente::all();
-    
         $infoClientes = array("array_clientes" => $array_clientes); 
-    
-        return view('RegistroClientes.ClientesHome', $infoClientes);
+        return view('Clientes.Home', $infoClientes);
     }
 
     /**
@@ -30,8 +29,12 @@ class ClientesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
+
     {
-        return view('RegistroClientes.RegistroClientes');
+        $departamentos = Http::get('https://www.datos.gov.co/resource/xdk5-pm3f.json');
+        $listadoDepart = $departamentos->json();
+        $tipoDocumento = TipoIdentificacion::all();
+        return view('Clientes.Registro', compact( 'tipoDocumento','listadoDepart'));
     }
 
     /**
@@ -41,14 +44,15 @@ class ClientesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $tipoid = 1;
+    {      
+        $tipoid = $request->input('tipodocumento');
         $estado = 1;
         $documento = $request->input('documento');
         $nombres = $request->input('nombres');
         $direccion = $request->input('direccion');
         $mail = $request->input('mail');
-        $ciudad = $request->input('ciudad');
+        $ciudad= $request->input('ciudad');
+        var_dump($ciudad);
         $telefono = $request->input('telefono');
         $numEmpleados = $request->input('numEmpleados');
         $user = $request->input('usuario');
@@ -80,7 +84,7 @@ class ClientesController extends Controller
      */
     public function show(Clientes $clientes)
     {
-        //
+        
     }
 
     /**
@@ -91,10 +95,8 @@ class ClientesController extends Controller
      */
     public function edit($Clientes_id)
     {
-  
         $Clientes = Cliente::find($Clientes_id);
-                
-        return view('RegistroClientes.ClientesEditar', compact('Clientes'));
+        return view('Clientes.Editar', compact('Clientes'));
     }
 
     /**

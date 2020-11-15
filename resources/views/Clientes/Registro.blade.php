@@ -14,30 +14,37 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
         <input type="hidden" name="estado" value=1/>
         <p>Ingrese sus datos de Contácto:</p>
-        <label>Tipo de Documento:</label>
+        
         <select name="tipodocumento" id="documentType">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
+        <option value="">Tipo de Documento:</option>
+            @foreach ($tipoDocumento as $tipo)
+                <option value="{{ $tipo['id'] }}">{{ $tipo['nombreTipoId'] }}</option>
+            @endforeach
         </select></br>
         
         <input type="text" name="documento" id="document" placeholder="# de Documento o Nit"></br>
-        <input type="text" name="nombres" id="name" placeholder="Nombres Completos"></br>
-        <input type="text" name="direccion" id="addres" placeholder="Dirección"></br>
-        <input type="text" name="mail" id="userMail" placeholder="Correo"></br>
-        <input type="text" name="ciudad" id="city" placeholder="Ciudad"></br>
-        <input type="text" name="telefono" id="phone" placeholder="Teléfono"></br>
+        <input type="text" name="nombres" id="name" placeholder="Nombres Completos" ></br>
+        <input type="text" name="direccion" id="addres" placeholder="Dirección" ></br>
+        <input type="email" name="mail" id="userMail" placeholder="Correo" ></br>
+        
+        
+        
+        <select name="ciudad" id="city">
+        <option value="">Ciudad:</option>
+            @foreach ($listadoDepart as $ciudad)
+                <option value="{{ $loop->iteration }}">{{ $ciudad['municipio']}}</option>
+            @endforeach
+        </select></br>
+
+        <input type="text" name="telefono" id="phone" placeholder="Teléfono" ></br>
         <label>Ingrese el Número de Empleados de la Compañia:</label></br>
         <input type="number" name="numEmpleados" id="numEmpleados"></br>
 
         <p>Ingrese sus datos de ingreso a la Plataforma:</p>
 
         <input type="text" name="usuario" id="user" placeholder="Usuario"></br>
-        <input type="password" name="pass" id="userPass" placeholder="Contraseña"></br>
-        <input type="password" name="pass_confirmn" id="userPass2" placeholder="Confirme la Contraseña"></br></br>
+        <input type="password" name="pass" id="userPass" placeholder="Contraseña" ></br>
+        <input type="password" name="pass_confirmn" id="userPass2" placeholder="Confirme la Contraseña" ></br></br>
         
         <input type="submit" value="Registrarse">
     </form>

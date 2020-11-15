@@ -6,13 +6,7 @@
     <title>Usuarios Registrados</title>
 </head>
 <body>
-
-    @foreach ($usuarios as $usuario)
-
-        {{$usuario-> userName }}
-
-    @endforeach
-
+    <h1>Usuarios Registrados</h1>
 
 </body>
 </html>

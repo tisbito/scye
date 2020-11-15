@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCYE - Clientes</title>
-</head>
-<body>
 
-<center>
 <h1>Clientes Registrados:</h1>
     <p>
-        
+
     </p>
         <table border="1px">
         <thead>
@@ -26,7 +17,7 @@
             </tr>
         </thead>
                 @foreach($array_clientes as $item)
-                
+
         <tbody>
             <tr>
                 <td>{{ $item-> identificacion }}</td>
@@ -41,6 +32,3 @@
                 @endforeach
         </tbody>
         </table>
-        </center>
-</body>
-</html>
